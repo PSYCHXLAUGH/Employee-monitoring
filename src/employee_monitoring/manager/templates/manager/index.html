@@ -1,0 +1,359 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Employee Monitoring - title</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'manager/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'manager/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+    <link href="{% static 'manager/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'manager/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'manager/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'manager/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'manager/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{% static 'manager/css/main.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+<header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <img src="{% static 'manager/img/favicon.png' %}" alt="">
+            <h1 class="sitename">Employee Monitoring</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="#hero" class="active">Главная<br></a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#team">Команда по практике</a></li>
+                <li class="dropdown"><a href="#"><span>Пока не придумал :(</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">Dropdown 1</a></li>
+                        <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                                class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="#">Deep Dropdown 1</a></li>
+                                <li><a href="#">Deep Dropdown 2</a></li>
+                                <li><a href="#">Deep Dropdown 3</a></li>
+                                <li><a href="#">Deep Dropdown 4</a></li>
+                                <li><a href="#">Deep Dropdown 5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Dropdown 2</a></li>
+                        <li><a href="#">Dropdown 3</a></li>
+                        <li><a href="#">Dropdown 4</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="#about">Войти</a>
+
+    </div>
+</header>
+
+<main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+        <img src="{% static 'manager/img/hero-bg-abstract.jpg' %}" alt="" data-aos="fade-in" class="">
+
+        <div class="container">
+            <div class="row justify-content-center" data-aos="zoom-out">
+                <div class="col-xl-7 col-lg-9 text-center">
+                    <h1>Тема 29. Информационная система управления кафе</h1>
+                    <p>С помощью Employee Monitoring вы можете контролировать график сотрудников.</p>
+                </div>
+            </div>
+            <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
+                <a href="#about" class="btn-get-started">Регистрация</a>
+            </div>
+
+            <div class="row gy-4 mt-5">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bi bi-easel"></i></div>
+                        <h4 class="title"><a href="">Наглядная статистика</a></h4>
+                        <p class="description">Используйте все возможности Employee Monitoring для улучшения вашего бизнеса</p>
+                    </div>
+                </div><!--End Icon Box -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="200">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bi bi-gem"></i></div>
+                        <h4 class="title"><a href="">Бесплатное облачное решение</a></h4>
+                        <p class="description">Отлично подойдет для стартапов</p>
+                    </div>
+                </div><!--End Icon Box -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="300">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                        <h4 class="title"><a href="">Контроль из любой точки мира</a></h4>
+                        <p class="description">Контролируйте бизнес не выходя из дома</p>
+                    </div>
+                </div><!--End Icon Box -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="400">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bi bi-command"></i></div>
+                        <h4 class="title"><a href="">Интеграция с API</a></h4>
+                        <p class="description">Используйте все возможности Employee Monitoring для интеграции с вашими сервисами</p>
+                    </div>
+                </div><!--End Icon Box -->
+
+            </div>
+        </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>как это работает?<br></h2>
+<!--            <p>.</p>-->
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                    <p>Поддерживаемый функционал</p>
+                    <ul>
+                        <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i>
+                            <span>Ullamco laboris nisi ut aliquip ex ea commodo</span></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                    <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Зарегистрировано сейчас</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p></p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Hours Of Support</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Workers</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Stats Section -->
+
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+
+        <div class="container">
+            <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-xl-10">
+                    <div class="text-center">
+                        <h3>Call To Action</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.</p>
+                        <a class="cta-btn" href="#team">Call To Action</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /Call To Action Section -->
+
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Команда по практике</h2>
+<!--            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>-->
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{% static 'manager/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Медведев Тимур Фахраддинович</h4>
+                            <span>Разработка на Python и проектирование сервиса.</span>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{% static 'manager/img/team/team-2.jpg' %}" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Рогов Илья Анатольевич</h4>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{% static 'manager/img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Грицаенко Максим Алексеевич</h4>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+            </div>
+        </div>
+    </section><!-- /Team Section -->
+</main>
+
+<footer id="footer" class="footer">
+
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-about">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <span class="sitename">OnePage</span>
+                </a>
+                <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
+                    darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                <div class="social-links d-flex mt-4">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+
+<!--            <div class="col-lg-2 col-6 footer-links">-->
+<!--                <h4>Our Services</h4>-->
+<!--                <ul>-->
+<!--                    <li><a href="#">Web Design</a></li>-->
+<!--                    <li><a href="#">Web Development</a></li>-->
+<!--                    <li><a href="#">Product Management</a></li>-->
+<!--                    <li><a href="#">Marketing</a></li>-->
+<!--                    <li><a href="#">Graphic Design</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                <h4>МТУСИ</h4>
+                <p>ул. Авиамоторная, 8А, Москва, 111024</p>
+                <p>Москва</p>
+                <p class="mt-4"><strong>Телефон:</strong> <span>+7 (495) 957-77-31</span></p>
+                <p><strong>Почта:</strong> <span>mtuci@mtuci.ru</span></p>
+            </div>
+
+        </div>
+    </div>
+
+
+</footer>
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+<!-- Preloader -->
+<div id="preloader"></div>
+<!-- Vendor JS Files -->
+<script src="{% static 'manager/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'manager/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'manager/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'manager/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'manager/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'manager/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'manager/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<!-- Main JS File -->
+<script src="{% static 'manager/js/main.js' %}"></script>
+</body>
+
+</html>

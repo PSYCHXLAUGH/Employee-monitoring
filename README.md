@@ -14,7 +14,7 @@ poetry init
 poetry add <package>
 ```
 
-python = "^3.10"
+python = "3.10.1"
 <br>
 django = "4.2.1"
 <br>
