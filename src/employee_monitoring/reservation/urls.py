@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='reservation_main'), #  /reservation/ main page
-    path('<int:table_id>/', views.table_list),  # /reservation/<slug>
+    path('', views.reservation_mainpage, name='reservation_mainpage'),  # / main page
+    path('<int:table_id>/', views.reservation_table, name='reservation_table'),  # /<table_id>
+    path('<int:table_id>/', views.reservation_table, name='reservation_table'),  # /<table_id>
 ]
