@@ -1,5 +1,7 @@
 {% load static %}
 
+{% load simpletag_mainpage_content %}
+
 <!DOCTYPE html>
 
 <html lang="ru">
@@ -7,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Employee Monitoring</title>
+    <title>Employee Monitoring {% mainpage_stats %}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -34,178 +36,180 @@
 
 <body class="index-page">
 
-    <header id="header" class="header d-flex align-items-center sticky-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+<header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-            <a href="#" class="logo d-flex align-items-center me-auto">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-<!--                <img src="{% static 'manager/img/favicon.png' %}" alt="">-->
-                <h1 class="sitename">Employee Monitoring</h1>
-            </a>
+        <a href="#" class="logo d-flex align-items-center me-auto">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!--                <img src="{% static 'manager/img/favicon.png' %}" alt="">-->
+            <h1 class="sitename">Employee Monitoring</h1>
+        </a>
 
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="#hero" class="active">Главная<br></a></li>
-                    <li><a href="#about">Как это работает? 🤔</a></li>
-                    <li><a href="#team">Команда по практике 🔥</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="#hero" class="active">Главная<br></a></li>
+                <li><a href="#about">Как это работает? 🤔</a></li>
+                <li><a href="#team">Команда по практике 🔥</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
 
-            <a class="btn-getstarted" href="#about">Войти</a>
+        <a class="btn-getstarted" href="#about">Войти</a>
 
+    </div>
+</header>
+
+
+<main class="main">
+
+
+    <section id="hero" class="hero section">
+
+        <img src="{% static 'manager/img/hero-bg-abstract.jpg' %}" alt="" data-aos="fade-in" class="">
+
+        <div class="container">
+            {% block hero %}
+            {% endblock %}
         </div>
-    </header>
+
+    </section><!-- /Hero Section -->
 
 
-    <main class="main">
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
 
-        <section id="hero" class="hero section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-            <img src="{% static 'manager/img/hero-bg-abstract.jpg' %}" alt="" data-aos="fade-in" class="">
+            <div class="row gy-4">
 
-            <div class="container">
-                {% block hero %}
-                {% endblock %}
-            </div>
-
-        </section><!-- /Hero Section -->
-
-
-        <!-- Stats Section -->
-        <section id="stats" class="stats section">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
                                   class="purecounter"></span>
-                            <p>Зарегистрировано сейчас</p>
-                        </div>
-                    </div><!-- End Stats Item -->
+                        <p>Зарегистрировано сейчас</p>
+                    </div>
+                </div><!-- End Stats Item -->
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
                                   class="purecounter"></span>
-                            <p>Обработано запросов сервисом Employee Monitoring</p>
-                        </div>
-                    </div><!-- End Stats Item -->
+                        <p>Обработано запросов сервисом Employee Monitoring</p>
+                    </div>
+                </div><!-- End Stats Item -->
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
                                   class="purecounter"></span>
-                            <p>Количество минут работы сервиса</p>
-                        </div>
-                    </div><!-- End Stats Item -->
+                        <p>Количество минут работы сервиса</p>
+                    </div>
+                </div><!-- End Stats Item -->
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
                                   class="purecounter"></span>
-                            <p>Количество интеграций с amoCRM</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                </div>
+                        <p>Количество интеграций с amoCRM</p>
+                    </div>
+                </div><!-- End Stats Item -->
 
             </div>
 
-        </section><!-- /Stats Section -->
+        </div>
+
+    </section><!-- /Stats Section -->
 
 
-        <!-- Call To Action Section -->
-        <section id="call-to-action" class="call-to-action section">
-            <div class="container">
-                <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="col-xl-10">
-                        <div class="text-center">
-                            <h3>Как это работает? 🤔</h3>
-                            <p align="center">Пройдите регистрацию</p>
-                            <p align="center">Получите токены авторизации</p>
-                            <p align="center">Добавьте сотрудников</p>
-                            <p align="center">Интегрируйтесь с вашими сервисами и получайте актуальную статистику</p>
-                            <a class="cta-btn" href="#register">Начать регистрацию</a>
-                        </div>
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+        <div class="container">
+            <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-xl-10">
+                    <div class="text-center">
+                        <h3>Как это работает? 🤔</h3>
+                        <p align="center">Пройдите регистрацию</p>
+                        <p align="center">Получите токены авторизации</p>
+                        <p align="center">Добавьте сотрудников</p>
+                        <p align="center">Интегрируйтесь с вашими сервисами и получайте актуальную статистику</p>
+                        <a class="cta-btn" href="#register">Начать регистрацию</a>
                     </div>
                 </div>
             </div>
+        </div>
 
-        </section><!-- /Call To Action Section -->
+    </section><!-- /Call To Action Section -->
 
 
-        <!-- Team Section -->
-        <section id="team" class="team section">
+    <!-- Team Section -->
+    <section id="team" class="team section">
 
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Команда по практике 😎</h2>
-                <!--            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>-->
-            </div><!-- End Section Title -->
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Команда по практике 😎</h2>
+            <!--            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>-->
+        </div><!-- End Section Title -->
 
-            <div class="container">
+        <div class="container">
 
-                <div class="row justify-content-center">
+            <div class="row justify-content-center">
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <div class="team-member">
-                            <div class="member-img">
-                                <img src="{% static 'manager/img/team/team-1.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>Медведев Тимур Фахраддинович</h4>
-                                <span>Fullstack разработчик</span>
-                            </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{% static 'manager/img/team/team-1.jpg' %}" class="img-fluid" alt="">
                         </div>
-                    </div><!-- End Team Member -->
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                        <div class="team-member">
-                            <div class="member-img">
-                                <img src="{% static 'manager/img/team/team-2.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>Рогов Илья Анатольевич</h4>
-                                <span>Проектирование сервиса. Составление отчета по практике.</span>
-                            </div>
+                        <div class="member-info">
+                            <h4>Медведев Тимур Фахраддинович</h4>
+                            <span>Fullstack разработчик</span>
                         </div>
-                    </div><!-- End Team Member -->
+                    </div>
+                </div><!-- End Team Member -->
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                        <div class="team-member">
-                            <div class="member-img">
-                                <img src="{% static 'manager/img/team/team-3.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>Грицаенко Максим Алексеевич</h4>
-                                <span>Крутой чел</span>
-                            </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{% static 'manager/img/team/team-2.jpg' %}" class="img-fluid" alt="">
                         </div>
-                    </div><!-- End Team Member -->
-                </div>
+                        <div class="member-info">
+                            <h4>Рогов Илья Анатольевич</h4>
+                            <span>Проектирование сервиса. Составление отчета по практике.</span>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{% static 'manager/img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Грицаенко Максим Алексеевич</h4>
+                            <span>Создание презентации по проекту</span>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
             </div>
-        </section><!-- /Team Section -->
-    </main>
+        </div>
+    </section><!-- /Team Section -->
+</main>
 
-        <!-- Scroll Top -->
-        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-                class="bi bi-arrow-up-short"></i></a>
-        <!-- Preloader -->
-        <div id="preloader"></div>
-        <!-- Vendor JS Files -->
-        <script src="{% static 'manager/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-        <script src="{% static 'manager/vendor/aos/aos.js' %}"></script>
-        <script src="{% static 'manager/vendor/purecounter/purecounter_vanilla.js' %}"></script>
-        <script src="{% static 'manager/vendor/glightbox/js/glightbox.min.js' %}"></script>
-        <script src="{% static 'manager/vendor/swiper/swiper-bundle.min.js' %}"></script>
-        <script src="{% static 'manager/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-        <script src="{% static 'manager/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-        <!-- Main JS File -->
-        <script src="{% static 'manager/js/main.js' %}"></script>
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+<!-- Preloader -->
+<div id="preloader"></div>
+<!-- Vendor JS Files -->
+<script src="{% static 'manager/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'manager/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'manager/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'manager/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'manager/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'manager/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'manager/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<!-- Main JS File -->
+<script src="{% static 'manager/js/main.js' %}"></script>
+<script>(function(a,m,o,c,r,m){a[m]={id:"404352",hash:"9eac945e88f7bb07bff290a12a9ae83de6c7cdb33734245c8b688ce0eafc9d7c",locale:"ru",inline:false,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));</script>
 
 </body>
 

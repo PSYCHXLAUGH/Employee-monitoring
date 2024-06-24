@@ -4,9 +4,12 @@
 
 
 {% block hero %}
+
+{% load simpletag_mainpage_content %}
+
 <div class="row justify-content-center" data-aos="zoom-out">
     <div class="col-xl-7 col-lg-9 text-center">
-        <h1>Тема 29. Информационная система управления кафе</h1>
+        <h1>Тема 29. Информационная система управления кафе {% mainpage_stats %}</h1>
         <p>С помощью Employee Monitoring вы можете контролировать график сотрудников.</p>
     </div>
 </div>
@@ -48,14 +51,6 @@
     </div><!--End Icon Box -->
 
 </div>
-
-
-<!--404-->
-<!--<div class="row justify-content-center" data-aos="zoom-out">-->
-<!--    <div class="col-xl-7 col-lg-9 text-center">-->
-<!--        <h1>К сожалению по данному запросу страница не найдена 😭</h1>-->
-<!--    </div>-->
-<!--</div>-->
 
 {% endblock %}
 
