@@ -52,6 +52,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'employee_monitoring.urls'
 
+CSRF_TRUSTED_ORIGINS = ["https://*.ngrok-free.app"]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

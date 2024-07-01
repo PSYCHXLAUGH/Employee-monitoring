@@ -1,0 +1,111 @@
+{% extends '_base_profile.html' %}
+
+{% load static %}
+
+{% load manager_tags %}
+
+{% block content %}
+
+<div class="container px-6 mx-auto grid">
+
+    <div class="fmy-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 form-group">
+        <h2
+                class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+        >Доступные адреса</h2>
+
+        <table class="w-full whitespace-no-wrap">
+            <thead>
+            <tr
+                    class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+            >
+                <th class="px-4 py-3">Уникальный номер адреса</th>
+                <th class="px-4 py-3">Адрес</th>
+            </tr>
+            </thead>
+            <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+            >
+
+            {% get_address as addr %}
+            {% for x in addr.address %}
+
+            <!--                  table-->
+            <td class="px-4 py-3">
+                <!--                        item-->
+                <div class="flex items-center text-sm">
+                    <!-- Avatar with inset shadow -->
+                    <div
+                            class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                    >
+                        <img
+                                class="object-cover w-full h-full rounded-full"
+                                src="{% static 'manager/img/favicon.png' %}"
+                                alt=""
+                                loading="lazy"
+                        />
+                        <div
+                                class="absolute inset-0 rounded-full shadow-inner"
+                                aria-hidden="true"
+                        ></div>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Уникальный номер адреса: {{x.id}}</p>
+                    </div>
+                </div>
+            </td>
+
+            <td class="px-4 py-3 text-xs">
+                        <span
+                                class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                            {{x.location}}
+                        </span>
+            </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Форма добавления адреса</h2>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label class="block text-sm" type="text" for="_address">Уникальный номер адреса</label>
+            <input name="address"
+                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                   type="text" id="_address" placeholder="г. Москва, ул. Народного Ополчения, д. 32.">
+            <label class="block mt-4 text-sm"></label>
+
+            <button type="submit">
+                Добавить
+            </button>
+
+
+        </form>
+
+
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Форма удаления адреса</h2>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label class="block text-sm" type="text" for="_del_address">Идентификатор адреса</label>
+            <input name="del_address"
+                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                   type="text" id="_del_address" placeholder="100">
+            <label class="block mt-4 text-sm"></label>
+
+            <button type="submit">
+                Удалить
+            </button>
+
+
+        </form>
+        <br>
+        <br>
+
+    </div>
+</div>
+
+
+{% endblock %}
