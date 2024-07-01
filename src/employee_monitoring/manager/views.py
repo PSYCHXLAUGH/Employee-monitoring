@@ -29,6 +29,7 @@ def manager_stats(request):
     return render(request, 'profile_stats.html')
 
 
+@login_required
 def manager_forms(request):
     if request.method == 'POST' and request.POST.get('table_number') and request.POST.get(
             'seats_available') and request.POST.get('address'):
@@ -57,6 +58,7 @@ def manager_forms(request):
     return render(request, 'profile_addtable.html')
 
 
+@login_required
 def manager_address(request):
     try:
         if request.method == 'POST' and request.POST.get('address'):  # add address
@@ -73,6 +75,7 @@ def manager_links(request):
     return render(request, 'profile_getlinks.html')
 
 
+@login_required
 def reservation(request):
     # Booking(booking_date=datetime.datetime.now(), comment='helloasefworld', number_of_people=10,
     #         table=Table.objects.all()[0]).save()

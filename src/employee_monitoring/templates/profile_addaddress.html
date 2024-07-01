@@ -20,6 +20,7 @@
             >
                 <th class="px-4 py-3">Уникальный номер адреса</th>
                 <th class="px-4 py-3">Адрес</th>
+                <th class="px-4 py-3">Ссылка на форму</th>
             </tr>
             </thead>
             <tbody
@@ -60,6 +61,9 @@
                         >
                             {{x.location}}
                         </span>
+            </td>
+                        <td class="px-4 py-3 text-xs">
+                            <a href="reservation?id={{x.id}}">Ссылка</a>
             </td>
             </tr>
             {% endfor %}

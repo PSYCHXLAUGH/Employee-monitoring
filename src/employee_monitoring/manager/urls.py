@@ -4,11 +4,9 @@ from .views import manager_stats, manager_forms, manager_links, manager_address,
 
 urlpatterns = [
     # mainpage
-
     path('', manager_main_page),
     path('login', manager_main_login),
     path('register', manager_main_register),
-
     # profile_panel
     path('statistics', manager_stats),
     path('tables', manager_forms),
