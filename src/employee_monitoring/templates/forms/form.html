@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Форма</title>
+    <link href="{% static 'manager/img/favicon.png' %}" rel="icon">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'manager/css/tailwind.output.css' %}"/>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="{% static 'manager/js/init-alpine.js' %}"></script>
+</head>
+<body>
+
+<div class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
+    <div class="justify-center text-sm max-w-prose  mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
+        <div class="flex items-center justify-center p-6 sm:p-12">
+            <div class="w-full">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <br>
+                    <button class="text-gray-700 dark:text-gray-400" type="submit">{{ button_name }}</button>
+                    <br>
+                    <br>
+                    <a href="/">На главную</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

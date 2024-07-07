@@ -18,7 +18,8 @@ python = "3.10.1"
 <br>
 django = "4.2.1"
 <br>
-pytest = "^8.2.2"
+pytest = "^8.2.2"{
+e
 <br>
 flake8 = "^7.0.0"
 

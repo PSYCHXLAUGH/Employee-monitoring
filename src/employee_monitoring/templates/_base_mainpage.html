@@ -1,7 +1,5 @@
 {% load static %}
 
-{% load manager_tags %}
-
 <!DOCTYPE html>
 
 <html lang="ru">
@@ -40,8 +38,6 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
         <a class="logo d-flex align-items-center me-auto">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!--                <img src="{% static 'manager/img/favicon.png' %}" alt="">-->
             <h1 class="sitename">Employee Monitoring</h1>
         </a>
 
@@ -68,8 +64,51 @@
         <img src="{% static 'manager/img/hero-bg-abstract.jpg' %}" alt="" data-aos="fade-in" class="">
 
         <div class="container">
-            {% block hero %}
-            {% endblock %}
+
+            <div class="row justify-content-center" data-aos="zoom-out">
+                <div class="col-xl-7 col-lg-9 text-center">
+                    <h1>Тема 29. Информационная система управления кафе</h1>
+                    <p>С помощью Employee Monitoring вы можете контролировать бронированием столов в вашем кафе.</p>
+                </div>
+            </div>
+            <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
+                <a href="register" class="btn-get-started">Регистрация</a>
+            </div>
+
+            <div class="row gy-4 mt-5">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bi bi-easel"></i></div>
+                        <h4 class="title"><a href="">Наглядная статистика</a></h4>
+                        <p class="description">Используйте все возможности Employee Monitoring для улучшения вашего бизнеса</p>
+                    </div>
+                </div><!--End Icon Box -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="200">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bi bi-gem"></i></div>
+                        <h4 class="title"><a href="">Бесплатное облачное решение</a></h4>
+                        <p class="description">Отлично подойдет для начинающих кафе</p>
+                    </div>
+                </div><!--End Icon Box -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="300">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                        <h4 class="title"><a href="">Контроль из любой точки мира</a></h4>
+                        <p class="description">Контролируйте бронь столов не выходя из дома</p>
+                    </div>
+                </div><!--End Icon Box -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="400">
+                    <div class="icon-box">
+                        <div class="icon"><i class="bi bi-command"></i></div>
+                        <h4 class="title"><a href="">Общая картина</a></h4>
+                        <p class="description">Используйте все возможности Employee Monitoring для аналитики</p>
+                    </div>
+                </div><!--End Icon Box -->
+
+            </div>
         </div>
 
     </section><!-- /Hero Section -->
@@ -81,10 +120,9 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row gy-4">
-
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="{{ users_count }}" data-purecounter-duration="1"
                                   class="purecounter"></span>
                         <p>Зарегистрировано сейчас</p>
                     </div>
@@ -92,7 +130,7 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="{{ request_counter }}" data-purecounter-duration="1"
                                   class="purecounter"></span>
                         <p>Обработано запросов сервисом Employee Monitoring</p>
                     </div>
@@ -100,17 +138,17 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="{{ seconds }}" data-purecounter-duration="1"
                                   class="purecounter"></span>
-                        <p>Количество минут работы сервиса</p>
+                        <p>Количество секунд работы сервиса</p>
                     </div>
                 </div><!-- End Stats Item -->
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="{{ counter_db }}" data-purecounter-duration="1"
                                   class="purecounter"></span>
-                        <p>Количество интеграций с amoCRM</p>
+                        <p>Количество выполненных записей в Базу Данных</p>
                     </div>
                 </div><!-- End Stats Item -->
 
@@ -129,9 +167,9 @@
                     <div class="text-center">
                         <h3>Как это работает? 🤔</h3>
                         <p align="center">Пройдите регистрацию</p>
-                        <p align="center">Получите токены авторизации</p>
-                        <p align="center">Добавьте сотрудников</p>
-                        <p align="center">Интегрируйтесь с вашими сервисами и получайте актуальную статистику</p>
+                        <p align="center">Добавьте адрес</p>
+                        <p align="center">Добавьте стол</p>
+                        <p align="center">Скопируйте ссылку бронирования для ваших клиентов</p>
                         <a class="cta-btn" href="register">Начать регистрацию</a>
                     </div>
                 </div>
